@@ -7,9 +7,9 @@ import ItemListContainer from './components/ItemListContainer';
 
 function App() {
  return(
-    <>
+<>
  <NavBar></NavBar>
- <ItemListContainer greeting="hola"/>
+ <ItemListContainer greating="Contador"/>
 
  
 

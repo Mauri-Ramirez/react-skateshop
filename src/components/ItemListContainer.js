@@ -1,12 +1,16 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import React from 'react';
+import ItemCount from './ItemCount'
 
 
-function ItemListContainer({greeting}) {
+function ItemListContainer({greating}) {
+
+    const onAdd = (param) => { alert("agregado al carrito")}
+
     return (
-<div>
-<h2>{greeting}</h2>
-</div>
+<>
+<h2>{greating}</h2>
+<ItemCount initial={1} stock={5} onAdd={onAdd}/>
+</>
     );
   }
   
