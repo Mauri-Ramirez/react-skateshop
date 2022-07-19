@@ -1,8 +1,8 @@
 [   
     {
         "id": 1,
-        "nombre": "Zero Single Skull Black 8.5",
-        "img": "../img/toymachineburythehatchet.jpg",
+        "nombre": "Toy Machine Bury The Hatchet 8.5",
+        "img": "images/toymachineburythehatchet.jpg",
         "precio": "15000",
         "stock": "5"
         
@@ -11,7 +11,7 @@
     {
         "id": 2,
         "nombre": "Zero Skull Black 8.2 ",
-        "img": "./img/zerosingleskullblack.jpg",
+        "img": "images/zerosingleskullblack.jpg",
         "precio": "15000",
         "stock": "5"
     },
@@ -19,7 +19,7 @@
     {
         "id": 3,
         "nombre": "zero skull blood 8.3",
-        "img": "../src/img/zeroskullblood.jpg",
+        "img": "images/zeroskullblood.jpg",
         "precio": "15000",
         "stock": "5"
     }
