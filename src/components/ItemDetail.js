@@ -3,15 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-const ItemDetail = ( {product}) => {
+const ItemDetail = ( {items}) => {
 
   return ( <>
   
   <div>
-  <img src={product.img} alt="..."/>
+  <img src={items.img} alt="..."/>
   <div>
-    <p>{product.nombre}</p>
-    <p >{product.precio}</p>
+    <p>{items.nombre}</p>
+    <p >{items.precio}</p>
   </div>
 </div>
   
