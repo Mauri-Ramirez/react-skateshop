@@ -3,14 +3,15 @@ import products from '../data/product.json';
 import ItemDetail from './ItemDetail';
 
 
-function ItemListContainer({greating}) {
 
-    const [productList, setProductList] = useState ([])
+function ItemDetailContainer({greating}) {
+
+    const [productList, setProductList] = useState ({});
 
 
     const myPromise = new Promise((resolve, reject) => {
         setTimeout(() => {
-          resolve(products);
+          resolve(products[1]);
         }, 300);
       });
 
@@ -21,7 +22,8 @@ function ItemListContainer({greating}) {
 
     return (
 <>
-<ItemDetail></ItemDetail>
+<h2>{greating}</h2>
+<ItemDetail items={productList}/>
 </>
     );
   }

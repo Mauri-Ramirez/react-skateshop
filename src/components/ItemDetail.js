@@ -1,15 +1,17 @@
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const ItemDetail = ( {Item}) => {
+
+const ItemDetail = ( {product}) => {
 
   return ( <>
   
-  <div className="card" style="width: 18rem;">
-  <img src={Item.img} class="card-img-top" alt="..."/>
-  <div className="card-body">
-    <p className="card-text">{Item.nombre}</p>
-    <p className="card-text">{Item.precio}</p>
+  <div>
+  <img src={product.img} alt="..."/>
+  <div>
+    <p>{product.nombre}</p>
+    <p >{product.precio}</p>
   </div>
 </div>
   
