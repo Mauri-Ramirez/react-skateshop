@@ -19,7 +19,7 @@ function ItemDetailContainer({greating}) {
       });
 
       myPromise.then((res)=>{
-        setProductList(res.find((item) => item.Id === detailId))
+        setProductList(res.filter((item) => item.id === parseInt(detailId)))
       })
 
     }, [detailId])
