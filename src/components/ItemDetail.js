@@ -8,7 +8,7 @@ const ItemDetail = ( {items}) => {
   return ( <>
   
   <div>
-  <img src={items.img}/>
+  <img src={items.img} alt=""/>
   <div>
     <p>{items.nombre}</p>
     <p>{items.precio}</p>

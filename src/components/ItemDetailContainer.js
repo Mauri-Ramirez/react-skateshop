@@ -1,25 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import products from '../data/product.json';
 import ItemDetail from './ItemDetail';
+
 
 
 
 function ItemDetailContainer({greating}) {
 
     const [productList, setProductList] = useState ({});
+    const {detailId} = useParams();
 
-
-    const myPromise = new Promise((resolve, reject) => {
+    useEffect(() =>{
+      const myPromise = new Promise((resolve, reject) => {
         setTimeout(() => {
-          resolve(products[1]);
-        }, 300);
+          resolve(products);
+        }, 5000);
       });
 
       myPromise.then((res)=>{
-        setProductList(res)
+        setProductList(res.find((item) => item.Id === detailId))
       })
-      
 
+    }, [detailId])
+  
     return (
 <>
 <h2>{greating}</h2>
