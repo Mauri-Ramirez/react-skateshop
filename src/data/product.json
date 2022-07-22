@@ -4,7 +4,8 @@
         "nombre": "Toy Machine Bury The Hatchet 8.5",
         "img": "images/toymachineburythehatchet.jpg",
         "precio": "15000",
-        "stock": "5"
+        "stock": "5",
+        "categoria": "Tablas"
         
     },
 
@@ -13,7 +14,8 @@
         "nombre": "Zero Skull Black 8.2 ",
         "img": "images/zerosingleskullblack.jpg",
         "precio": "15000",
-        "stock": "5"
+        "stock": "5",
+        "categoria": "Tablas"
     },
 
     {
@@ -21,6 +23,62 @@
         "nombre": "zero skull blood 8.3",
         "img": "images/zeroskullblood.jpg",
         "precio": "15000",
-        "stock": "5"
+        "stock": "5",
+        "categoria": "Tablas"
+    },
+
+    {
+        "id": 4,
+        "nombre": "Independent x Toy Machine 149",
+        "img": "images/independenttoymachine.jpg",
+        "precio": "20000",
+        "stock": "5",
+        "categoria": "Trucks"
+    },
+
+    {
+        "id": 5,
+        "nombre": "Independent Hollow Reynolds 144",
+        "img": "images/independenthollowreynolds.jpg",
+        "precio": "20000",
+        "stock": "5",
+        "categoria": "Trucks"
+    },
+
+    {
+        "id": 6,
+        "nombre": "Thunder Lights Black 139",
+        "img": "images/thunderlightsblackpolished.jpg",
+        "precio": "20000",
+        "stock": "5",
+        "categoria": "Trucks"
+    },
+
+    {
+        "id": 7,
+        "nombre": "Bones Hart Speedgator 54",
+        "img": "images/boneshartspeedgator.jpg",
+        "precio": "10000",
+        "stock": "5",
+        "categoria": "Ruedas"
+    },
+
+    {
+        "id": 8,
+        "nombre": "Spitfire Radial Trippy 52",
+        "img": "images/spitfireradialtrippy.jpg",
+        "precio": "10000",
+        "stock": "5",
+        "categoria": "Ruedas"
+    },
+
+    {
+        "id": 9,
+        "nombre": "Spitfire Big Head 52",
+        "img": "images/spitfirebighead.jpg",
+        "precio": "10000",
+        "stock": "5",
+        "categoria": "Ruedas"
     }
+
 ]
