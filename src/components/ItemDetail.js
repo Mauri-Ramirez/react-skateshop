@@ -1,14 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemCount from './ItemCount';
+import ItemCount from './ItemCount'; 
+import { Link } from 'react-router-dom';
 
 
 
 
 
 const ItemDetail = ( {items} ) => {
+  const [goCarrito, setGoCarrito] = useState(false)
 
-  const onAdd = (param) => { alert('Agregaste '+(param)+ ' a tu carrito')}
+  const onAdd = (param) => {
+    setGoCarrito(true);
+  }
   
   console.log(items);  
   return ( 
@@ -21,7 +25,9 @@ const ItemDetail = ( {items} ) => {
     <div className="card-title">{items.nombre}</div>
     <div className="card-text">{items.precio}</div>
     <div>
-    <ItemCount initial={1} stock={5} onAdd={onAdd}/>
+    {
+      goCarrito?<Link to="/cart">Terminar Compra</Link>:<ItemCount initial={1} stock={5} onAdd={onAdd}/>
+    }
     </div>
   
     </div>

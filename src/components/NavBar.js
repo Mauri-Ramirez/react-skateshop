@@ -24,7 +24,7 @@ function NavBar() {
         
         
       </div>
-      <CartWidget/>
+        <CartWidget/>
     </div>
     
   </div>
