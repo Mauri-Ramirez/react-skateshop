@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -26,12 +27,13 @@ const ItemCount = ({initial, stock, onAdd}) => {
 
   return (
     <div>
-        <div>
-            <button onClick={add}>+</button>
-            <p>{counter}</p>
-            <button onClick={subtract}>-</button>
-        </div>
-        <button onClick={onAdd}>Agregar al Carrito</button>
+        
+        <button type="button" className="btn btn-outline-dark" onClick={add}>+</button>
+        <p>{counter}</p>
+        <button type="button" className="btn btn-outline-dark" onClick={subtract}>-</button>
+        
+        <button type="button" className="btn btn-outline-dark" onClick={() => onAdd(counter)}>Agregar al Carrito</button>
+        
     </div>
   )
 }

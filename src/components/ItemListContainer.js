@@ -1,34 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import ItemCount from './ItemCount';
 import products from '../data/product.json';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 
 
-function ItemListContainer({greating}) {
+function ItemListContainer() {
 
     const [productList, setProductList] = useState ([])
     const {id} = useParams();
 
-    const onAdd = (param) => { alert("agregado al carrito")}
+    
 
     useEffect (() => {
-    
-      if (id === undefined){
-        const myPromise = new Promise((resolve, reject) => {
+
+        const myPromise = new Promise((resolve) => {
           setTimeout(() => {
             resolve(products);
           }, 1000);
         });
+
+        if (id){
         myPromise.then((res)=>{
-          setProductList(res)
-        })
-      }else{
-        const myPromise = new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve(products.filter(item => item.categoria === id));
-          }, 1000);
+          setProductList(res.filter(item => item.categoria === id))
         });
+      }else{ 
         myPromise.then((res)=>{
           setProductList(res)
         });
@@ -37,9 +32,7 @@ function ItemListContainer({greating}) {
 
     return (
 <>
-<h2>{greating}</h2>
 
-<ItemCount initial={1} stock={5} onAdd={onAdd}/>
 <ItemList items={productList}/>
 </>
     );

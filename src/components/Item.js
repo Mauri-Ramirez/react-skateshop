@@ -1,6 +1,7 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
@@ -13,7 +14,7 @@ const Item = ({product}) => {
     <div className="card-body"> 
     <div className="card-title">{product.nombre}</div>
     <div className="card-text">{product.precio}</div>
-    <NavLink to={`/item/${product.id}`}>mas info</NavLink>
+    <Link to={`/item/${product.id}`}>mas info</Link>
     </div>
     </div>
     </div>

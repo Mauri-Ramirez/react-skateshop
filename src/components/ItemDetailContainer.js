@@ -6,29 +6,28 @@ import ItemDetail from './ItemDetail';
 
 
 
-function ItemDetailContainer({greating}) {
+function ItemDetailContainer () {
 
     const [productList, setProductList] = useState ({});
     const {detailId} = useParams();
 
     useEffect(() =>{
-      const myPromise = new Promise((resolve, reject) => {
+      const myPromise = new Promise((resolve) => {
         setTimeout(() => {
           resolve(products);
-        }, 5000);
+        }, 1000);
       });
 
       myPromise.then((res)=>{
-        setProductList(res.filter((item) => item.id === parseInt(detailId)))
+        setProductList(res.find((items) => items.id === parseInt(detailId)))
       })
 
-    }, [detailId])
+    }, [detailId]);
   
     return (
-<>
-<h2>{greating}</h2>
-<ItemDetail items={productList}/>
-</>
+        <>
+        <ItemDetail items={productList}/>
+        </>
     );
   }
 
