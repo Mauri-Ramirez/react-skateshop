@@ -8,6 +8,7 @@ const Cart = () => {
   return (
     <>
     <h2>tu carrito </h2>
+    <button onClick={test.clear} type="button" className="btn btn-outline-dark">Borrar Todo</button>
     {
       test.cartList.length > 0 && test.cartList.map(item => (
 
@@ -21,7 +22,9 @@ const Cart = () => {
         <h5 className="card-title">{item.nombre}</h5>
         <p className="card-text">{item.cantidad}</p>
         <p className="card-text">{item.precio}</p>
+        <button onClick={ ()=> test.removeItem(item.id)} type="button" className="btn btn-outline-dark">Borrar</button>
       </div>
+      
     </div>
   </div>
 </div>
