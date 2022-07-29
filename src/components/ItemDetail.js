@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemCount from './ItemCount'; 
 import { Link } from 'react-router-dom';
+import { CartContext } from './CartContext';
 
 
 
@@ -9,9 +10,11 @@ import { Link } from 'react-router-dom';
 
 const ItemDetail = ( {items} ) => {
   const [goCarrito, setGoCarrito] = useState(false)
+  const test = useContext(CartContext)
 
   const onAdd = (param) => {
     setGoCarrito(true);
+    test.addToCart(items, param)
   }
   
   console.log(items);  

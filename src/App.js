@@ -5,11 +5,13 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './components/Cart';
+import CartContextProvider from "./components/CartContext"
 
 
 
 function App() {
  return(
+<CartContextProvider>    
 <BrowserRouter>
  <NavBar/>
  <Routes>
@@ -21,6 +23,7 @@ function App() {
  {/*<ItemDetailContainer greating="Detalles"/>*/}
  {/*<ItemListContainer greating="Contador"/>*/}
  </BrowserRouter>
+ </CartContextProvider>
  );
 }
 
