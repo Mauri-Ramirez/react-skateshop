@@ -16,7 +16,7 @@ const Cart = () => {
 
     {
       (test.cartList.length > 0)
-      ? <button onClick={test.clear} type="button" className="btn btn-outline-dark">Borrar Todo</button>&&<p className="card-title">total carrito:${totalPrice()}</p>
+      ? <button onClick={test.clear} type="button" className="btn btn-outline-dark">Borrar Todo</button>
       : <p className="card-title">Tu carrito esta vacio</p>
 
     } 
@@ -43,8 +43,9 @@ const Cart = () => {
 </div>
 
       ))
+      
     }
-    
+    <p className="card-title">total carrito:${totalPrice()}</p>
     </>
   )
 }
