@@ -24,7 +24,8 @@ function NavBar() {
         
         
       </div>
-        <CartWidget/>
+      <NavLink className="nav-link" to="/cart"><CartWidget/></NavLink>
+        
     </div>
     
   </div>

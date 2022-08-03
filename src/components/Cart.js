@@ -1,14 +1,25 @@
-import { useContext } from "react"
+ import React, { useContext } from "react"
 import { CartContext } from "./CartContext"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
+
 
 const Cart = () => {
   const test = useContext(CartContext)
-  console.log(test.cartList)
+  
   return (
     <>
-    <h2>tu carrito </h2>
-    <button onClick={test.clear} type="button" className="btn btn-outline-dark">Borrar Todo</button>
+
+    <h2 className="card-title">Tu carrito </h2>
+    <Link  type="button" className="btn btn-outline-dark" to="/">Ver todos los productos</Link> 
+
+    {
+      (test.cartList.length > 0)
+      ? <button onClick={test.clear} type="button" className="btn btn-outline-dark">Borrar Todo</button>
+      : <p className="card-title">Tu carrito esta vacio</p>
+
+    } 
+
     {
       test.cartList.length > 0 && test.cartList.map(item => (
 
@@ -20,8 +31,9 @@ const Cart = () => {
     <div className="col-md-8">
       <div className="card-body">
         <h5 className="card-title">{item.nombre}</h5>
-        <p className="card-text">{item.cantidad}</p>
         <p className="card-text">{item.precio}</p>
+        <p className="card-text">{item.quantity}</p>
+        <p className="card-text">{item.quantity * item.precio} </p>
         <button onClick={ ()=> test.removeItem(item.id)} type="button" className="btn btn-outline-dark">Borrar</button>
       </div>
       
@@ -34,4 +46,11 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Cart 
+
+
+
+
+
+
+

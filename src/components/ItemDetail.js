@@ -12,9 +12,9 @@ const ItemDetail = ( {items} ) => {
   const [goCarrito, setGoCarrito] = useState(false)
   const test = useContext(CartContext)
 
-  const onAdd = (param) => {
+  const onAdd = (quantity) => {
     setGoCarrito(true);
-    test.addToCart(items, param)
+    test.addToCart(items, quantity )
   }
   
   console.log(items);  
