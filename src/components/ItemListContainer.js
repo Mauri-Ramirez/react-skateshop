@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import products from '../data/product.json';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
+import { productsCollection } from '../utils/firebaseConfig';
+import { where, query, getDocs } from "firebase/firestore";
+
 
 
 function ItemListContainer() {
@@ -13,26 +15,17 @@ function ItemListContainer() {
 
     useEffect (() => {
 
-        const myPromise = new Promise((resolve) => {
-          setTimeout(() => {
-            resolve(products);
-          }, 1000);
-        });
+      const requesFilter = id ? query(productsCollection, where("categoria", "==", id)) : productsCollection
 
-        if (id){
-        myPromise.then((res)=>{
-          setProductList(res.filter(item => item.categoria === id))
-        });
-      }else{ 
-        myPromise.then((res)=>{
-          setProductList(res)
-        });
-      }  
+      getDocs(requesFilter)
+      .then(result => setProductList(result.docs.map(doc => doc.data())))
+
+      .catch(err => console.log(err))
+      
     }, [id]); 
 
     return (
 <>
-
 <ItemList items={productList}/>
 </>
     );
