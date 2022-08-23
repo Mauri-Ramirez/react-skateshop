@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import { firestoreFetch } from '../utils/firestoreFetch';
 
 
+
 function ItemListContainer() {
 
-    const [productList, setProductList] = useState ([])
+    const [productList, setProductList] = useState ([]);
     const {id} = useParams();
 
     useEffect (() => {
@@ -16,11 +17,11 @@ function ItemListContainer() {
           .catch(err => console.log(err));
       },[id]);
 
-      /* useEffect(()=>{
+       useEffect(()=>{
         return (()=>{
           setProductList([]);
         })
-      },[]);  */
+      },[]);  
 
       return (
         <>

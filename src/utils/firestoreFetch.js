@@ -1,9 +1,9 @@
 import { collection, doc, getDoc, getDocs, getFirestore, orderBy, query, where } from "firebase/firestore";
+import {db} from "./firebaseConfig";
 
 export const firestoreFetch = async (id) =>{
 
     let q;
-    const db = getFirestore();
 
     if (id) {
         q = query (collection(db, "products"), where("categoria", "==", id));
