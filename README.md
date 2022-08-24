@@ -8,7 +8,7 @@ Skateshop online es un tienda virtual especializada en productos para el Skate. 
 ![tiendaskate](https://user-images.githubusercontent.com/98596509/186302500-f975319c-a47f-4242-b555-a16d6fd32e13.png)
 
 
-## Navegacion
+## Navegación
 
 En el Inicio, pueden encontrarse listados todos los productos disponibles. La barra de navegación, permite filtrar los aproductos según su categoría
 
