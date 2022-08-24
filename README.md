@@ -3,6 +3,10 @@
 
 Skateshop online es un tienda virtual especializada en productos para el Skate. Este es un proyecto realizado para el curso de React en CoderHouse
 
+## Preview
+
+![tiendaskate](https://user-images.githubusercontent.com/98596509/186302500-f975319c-a47f-4242-b555-a16d6fd32e13.png)
+
 
 ## Navegacion
 
