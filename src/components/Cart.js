@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import { collection, serverTimestamp, setDoc, doc, updateDoc, increment } from "firebase/firestore";
 import {db} from "../utils/firebaseConfig"
+import Swal from "sweetalert2";
 
 const Cart = () => {
   const test = useContext(CartContext)
@@ -37,7 +38,7 @@ const Cart = () => {
     }
 
     createOrderInFirestore()
-      .then(result => alert("tu orden a sido creada. ID=" + result.id))
+      .then(result =>Swal.fire("tu orden a sido creada. ID=" + result.id))
       .catch(e => console.log(e))
 
     test.cartList.forEach(async (item) =>{
@@ -47,10 +48,8 @@ const Cart = () => {
       })
     })
 
-
     //borrar carrito
     test.clear()
-
   }
    
   return (
@@ -73,8 +72,6 @@ const Cart = () => {
       :  <p></p>
     } 
 
-
-
     {
       test.cartList.length > 0 && test.cartList.map(item => (
 
@@ -87,7 +84,7 @@ const Cart = () => {
       <div className="card-body">
         <h5 className="card-title">{item.nombre}</h5>
         <p className="card-text">Precio:${item.precio}</p>
-        <p className="card-text">Items:{item.quantity}</p>
+        <p className="card-text">Cantidad:{item.quantity}</p>
         <p className="card-text">${item.quantity * item.precio} </p>
         <button onClick={ ()=> test.removeItem(item.id)} type="button" className="btn btn-outline-dark">Borrar</button>
       </div>
@@ -102,12 +99,9 @@ const Cart = () => {
       {
         (test.cartList.length > 0 )
         
-        ?<p className="card-title">total carrito:${test.totalPrice()}</p>
+        ?<p className="h5">TOTAL CARRITO: ${test.totalPrice()}</p>
         :<p></p>
       } 
-      
-    
-    
     </>
   )
 }

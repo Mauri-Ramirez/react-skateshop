@@ -3,22 +3,19 @@ import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
-
 const Item = ({product}) => {
   return (
-    <div className="row row-cols-1 row-cols-md-6 g-4">
-    <div className="col">
-    <div className="card h-100">
-      <img src={product.img} className="card-img-top" alt= "" />
+    <div className="col-sm-6"> 
+    <div className="card w-75 p-3 text-center h-100">
+    <img src={product.img} className="card-img-top" alt= "" />
     <div className="card-body"> 
-    <div className="card-title">{product.nombre}</div>
-    <div className="card-text">{product.precio}</div>
-    <Link to={`/item/${product.id}`}>mas info</Link>
+    <h5 className="card-title">{product.nombre}</h5>
+    <p className="card-text">${product.precio}</p>
+    <Link className="btn btn-outline-dark" to={`/item/${product.id}`}>Ver mas</Link>
     </div>
     </div>
     </div>
-    </div>
+    
   )
 }
 

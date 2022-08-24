@@ -3,8 +3,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { CartContext } from './CartContext';
 import { useContext } from "react"
 
-
-
 const CartWidget = () => {
     const {totalProducts} = useContext(CartContext)
     

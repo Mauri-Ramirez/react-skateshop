@@ -4,10 +4,6 @@ import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
 import { CartContext } from './CartContext';
 
-
-
-
-
 const ItemDetail = ( {items} ) => {
   const [goCarrito, setGoCarrito] = useState(false)
   const test = useContext(CartContext)
@@ -16,28 +12,30 @@ const ItemDetail = ( {items} ) => {
     setGoCarrito(true);
     test.addToCart(items, quantity )
   }
-  
-  console.log(items);  
+
   return ( 
     <> 
-    <div className="row row-cols-1 row-cols-md-6 g-4">
-    <div className="col">
-    <div className="card h-100">
+    <div className="card mb-3" styleName="max-width: 540px;">
+    <div className="row g-0">
+    <div className="col-md-4">
     <img src={items.img} className="card-img-top" alt= "" />
-    <div className="card-body"> 
-    <div className="card-title">{items.nombre}</div>
-    <div className="card-text">{items.precio}</div>
+    </div>
+    <div className="col-md-8"> 
+    <div class="card-body"> 
+    <h5 className="card-title">{items.nombre}</h5>
+    <p className="card-text">{items.descripcion}</p>
+    <p className="card-text">Stock:{items.stock}</p>
+    <p className="card-text">${items.precio}</p>
     <div>
     {
-      goCarrito?<Link to="/cart">Terminar Compra</Link>:<ItemCount initial={1} stock={5} onAdd={onAdd}/>
+      goCarrito?<Link className="btn btn-outline-dark" to="/cart">Ver Carrito</Link>:<ItemCount initial={1} stock={5} onAdd={onAdd}/>
+      
     }
     </div>
-  
     </div>
     </div>
     </div>
-    </div> 
-
+    </div>
     </>
   )
 }

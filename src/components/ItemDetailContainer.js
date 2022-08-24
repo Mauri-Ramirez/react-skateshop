@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import { firestoreFetchOne } from '../utils/firestoreFetch';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ItemDetailContainer () {
     const [productList, setProductList] = useState ({});
